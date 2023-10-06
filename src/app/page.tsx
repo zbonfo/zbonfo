@@ -8,6 +8,7 @@ import { AiFillLinkedin } from "@react-icons/all-files/ai/AiFillLinkedin"
 import Image from "next/image"
 import { NavigationTabs } from "@/components/ui/tabs"
 import { VerticalNav } from "@/components/ui/vertical-nav"
+import { BiLinkExternal } from "@react-icons/all-files/bi/BiLinkExternal"
 
 
 let rotations = ["sm:rotate-2", "sm:-rotate-2", "sm:rotate-2", "sm:rotate-2", "sm:-rotate-2"]
@@ -101,7 +102,7 @@ export default function IndexPage() {
                     )}
                 >
                     <div>
-                        <span className={"font-bold text-lg"}>Zaki Bonfoh</span>
+                        <span className={"font-bold text-lg"}>zbonfo.github.io</span>
                     </div>
                     <div>
                         {/*<div className={"block md:hidden"}>*/}
@@ -130,13 +131,18 @@ export default function IndexPage() {
                 <div className="text-center md:py-10 space-y-4 px-0 md:px-8">
                     <h1 className={""}>Zaki Bonfoh</h1>
                     <p className={"text-[--muted] dark:text-[--muted] text-lg"}>
-                        👨🏿‍🏫 Self-taught full-stack web developer
+                        👨🏿‍🏫 I am a senior computer science student at Towson University and a self-taught web developer.
+                    </p>
+                    <p className={"text-[--muted] dark:text-[--muted] text-lg !-mt-0"}>
+                        🚀 I am currently working on multiple open source projects using my favorite stack.
                     </p>
                     <div className={"flex gap-2 w-full justify-center"}>
                         <a href="https://github.com/zbonfo" target={"_blank"}>
                             <Button leftIcon={<GithubIcon/>} intent={"white"}>Github</Button>
                         </a>
-                        <Button leftIcon={<AiFillLinkedin/>} intent={"gray"}>Resume</Button>
+                        <a href="/zbonfo_resume.pdf" target={"_blank"}>
+                            <Button leftIcon={<BiLinkExternal/>} intent={"gray"}>Resume</Button>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -148,12 +154,20 @@ export default function IndexPage() {
                     <div className="-my-4 flex justify-center flex-wrap 2xl:flex-nowrap gap-5 py-4 sm:gap-8">
                         {[
                             {
+                                id: "typescript",
+                                icon: <TypescriptIcon className={"w-10 h-10 md:w-12 md:h-12"}/>,
+                                title: "Typescript",
+                                description: "Strongly typed language that builds on JavaScript",
+                                iconClassName: "text-[#3178C6]",
+                                badge: <Badge>Language</Badge>
+                            },
+                            {
                                 id: "react",
                                 icon: <ReactIcon className={"w-10 h-10 md:w-12 md:h-12"}/>,
                                 title: "React",
                                 description: "Javascript library for web and native user interfaces",
                                 iconClassName: "text-[#61DAFB]",
-                                badge: <Badge>Front-end</Badge>
+                                badge: <Badge>Library</Badge>
                             },
                             {
                                 id: "next",
@@ -161,7 +175,7 @@ export default function IndexPage() {
                                 title: "Next.js",
                                 description: "Full-stack React framework with Rust-based tooling",
                                 iconClassName: "text-[#fff]",
-                                badge: <Badge>Full-end</Badge>
+                                badge: <Badge>Framework</Badge>
                             },
                             {
                                 id: "tailwind",
@@ -171,22 +185,14 @@ export default function IndexPage() {
                                 iconClassName: "text-[#06B6D4]",
                                 badge: <Badge>Front-end</Badge>
                             },
-                            {
-                                id: "typescript",
-                                icon: <TypescriptIcon className={"w-10 h-10 md:w-12 md:h-12"}/>,
-                                title: "Typescript",
-                                description: "Strongly typed language that builds on JavaScript",
-                                iconClassName: "text-[#3178C6]",
-                                badge: <Badge>Full-stack</Badge>
-                            },
-                            {
-                                id: "hasura",
-                                icon: <HasuraIcon className={"w-10 h-10 md:w-12 md:h-12"}/>,
-                                title: "Hasura Engine",
-                                description: "Data over a real-time and secured GraphQL API",
-                                iconClassName: "text-blue-400",
-                                badge: <Badge>Back-end</Badge>
-                            },
+                            // {
+                            //     id: "javascript",
+                            //     icon: <HasuraIcon className={"w-10 h-10 md:w-12 md:h-12"}/>,
+                            //     title: "Javascript",
+                            //     description: "Data over a real-time and secured GraphQL API",
+                            //     iconClassName: "text-blue-400",
+                            //     badge: <Badge>Back-end</Badge>
+                            // },
                         ].map((item, i) => (
                             <div
                                 key={item.id}
@@ -384,16 +390,6 @@ export default function IndexPage() {
                             year: "2023"
                         },
                         {
-                            name: "2AS",
-                            description: "Business static website",
-                            image: "/images/so_2as.png",
-                            icons: <>
-                                <ReactIcon className="h-6 w-6"/>
-                                <NextIcon className="h-6 w-6"/>
-                            </>,
-                            year: "2022"
-                        },
-                        {
                             name: "ClubArena",
                             description: "Multiplayer web-based chatroom game built with WebSockets",
                             image: "/images/so_clubarena.png",
@@ -427,17 +423,6 @@ export default function IndexPage() {
                                 <MySQLIcon className="h-8 w-8"/>
                             </>,
                             year: "2017"
-                        },
-                        {
-                            name: "Message board",
-                            description: "Message board made for a game",
-                            image: "/images/so_meethabbo.png",
-                            icons: <>
-                                <PhpIcon className="h-8 w-8"/>
-                                <HtmlIcon className="h-6 w-6"/>
-                                <MySQLIcon className="h-8 w-8"/>
-                            </>,
-                            year: "2016"
                         },
                     ].map((item, i) => (
                         <div key={item.name}
