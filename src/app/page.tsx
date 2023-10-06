@@ -136,7 +136,7 @@ export default function IndexPage() {
                         <a href="https://github.com/zbonfo" target={"_blank"}>
                             <Button leftIcon={<GithubIcon/>} intent={"white"}>Github</Button>
                         </a>
-                        <Button leftIcon={<AiFillLinkedin/>} intent={"gray"}>LinkedIn</Button>
+                        <Button leftIcon={<AiFillLinkedin/>} intent={"gray"}>Resume</Button>
                     </div>
                 </div>
             </section>
