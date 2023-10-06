@@ -9,6 +9,8 @@ import Image from "next/image"
 import { NavigationTabs } from "@/components/ui/tabs"
 import { VerticalNav } from "@/components/ui/vertical-nav"
 import { BiLinkExternal } from "@react-icons/all-files/bi/BiLinkExternal"
+import { BiMailSend } from "@react-icons/all-files/bi/BiMailSend"
+import { Popover } from "@/components/ui/popover"
 
 
 let rotations = ["sm:rotate-2", "sm:-rotate-2", "sm:rotate-2", "sm:rotate-2", "sm:-rotate-2"]
@@ -138,11 +140,20 @@ export default function IndexPage() {
                     </p>
                     <div className={"flex gap-2 w-full justify-center"}>
                         <a href="https://github.com/zbonfo" target={"_blank"}>
-                            <Button leftIcon={<GithubIcon/>} intent={"white"}>Github</Button>
+                            <Button leftIcon={<GithubIcon/>} intent={"white"}>School GitHub</Button>
                         </a>
+                        <a href="https://github.com/5rahim" target={"_blank"}>
+                            <Button leftIcon={<GithubIcon/>} intent={"white"}>Personal GitHub</Button>
+                        </a>
+                    </div>
+                    <div className={"flex gap-2 w-full justify-center"}>
                         <a href="/zbonfo_resume.pdf" target={"_blank"}>
-                            <Button leftIcon={<BiLinkExternal/>} intent={"gray"}>Resume</Button>
+                            <Button leftIcon={<BiLinkExternal/>} intent={"primary"}>Resume</Button>
                         </a>
+                        <Popover trigger={<Button leftIcon={<BiMailSend/>} intent={"primary-subtle"}>Email</Button>}>
+                            <p>bonfohzaki@gmail.com</p>
+                            <p>zbonfo1@students.towson.edu</p>
+                        </Popover>
                     </div>
                 </div>
             </section>
