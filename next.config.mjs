@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   output: "export",
-  basePath: isProd ? "/zbonfo" : "",
+  basePath: isProd ? "" : "",
   images: {
     unoptimized: true,
   },
